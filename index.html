@@ -8,44 +8,60 @@
 </head>
 <body>
 
-    <!-- HERO / DASHBOARD -->
-    <section>
+    <main>
+        <!-- HERO / DASHBOARD -->
+        <section>
 
-        <h1 id="Current">R0</h1>
-        <h1 id="Goal">R0</h1>
-        <h1 id="Progress">0%</h1>
-        <h1 id="Finish">---</h1>
+            <div class="dashboard">
+                <div class="dashboard-upgrade">
+                    <h1 id="Current">R0</h1>
+                </div>
+                <div class="dashboard-upgrade">
+                    <h1 id="Goal">R0</h1>
+                </div>
+                <div class="dashboard-upgrade">
+                    <h1 id="Progress">0%</h1>
+                </div>
+                <div class="dashboard-upgrade">
+                    <h1 id="Finish">---</h1>
+                </div>
+            </div>
 
-    </section>
+        </section>
 
-    <!-- INPUT SECTION -->
-    <section>
+        <!-- INPUT SECTION -->
+        <section>
+            
+            <label></label>
+            <input id="AddAmount" type="number" placeholder="Add Amount">
+            <label></label>
+            <input id="GoalAmount" type="number" placeholder="Goal Amount">
+            <label></label>
+            <input id="SavedMoney" type="number" placeholder="Saved Money">
         
-        <input id="AddAmount" type="number" placeholder="Add Amount">
-        <input id="SavedMoney" type="number" placeholder="Saved Money">
-        <input id="GoalAmount" type="number" placeholder="Goal Amount">
-    
-        <button id="updateBtn">Update</button>
-        <button onclick="Reset()" class="reset">Reset</button>
+            <button id="updateBtn">Update</button>
+            <button onclick="Reset()" class="reset">Reset</button>
 
-    </section>
+        </section>
 
-    <!-- PROGRESS BAR -->
-    <section>
+        <!-- PROGRESS BAR -->
+        <section>
 
-    </section>
+        </section>
 
-     <!-- CHARTS SECTION -->
-    <section>
+        <!-- CHARTS SECTION -->
+        <section>
 
-    </section>
+        </section>
 
-    <!-- ACTIVITY HISTORY -->
-    <section>
+        <!-- ACTIVITY HISTORY -->
+        <section>
 
-        <p id="ActivityHistory"></p>
-        
-    </section>
+            <p id="ActivityHistory"></p>
+            
+        </section>
+
+    </main>
 
     <footer>
 
