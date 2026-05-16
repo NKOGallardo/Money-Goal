@@ -10,23 +10,23 @@
     <!-- HERO / DASHBOARD -->
     <section>
 
-        <canvas id="Current"> </canvas>
-        <canvas id="Goal"> </canvas>
-        <canvas id="Progress"> </canvas>
-        <canvas id="Finish"> </canvas>
+        <h1 id="Current">R0</h1>
+        <h1 id="Goal">R0</h1>
+        <h1 id="Progress">0%</h1>
+        <h1 id="Finish">---</h1>
 
     </section>
 
     <!-- INPUT SECTION -->
     <section>
         
-        <input type="number" placeholder="Add Amount">
-        <input type="number" placeholder="Add Saving">
-        <input type="number" placeholder="Goal Amount">
+        <input id="AddAmount" type="number" placeholder="Add Amount">
+        <input id="AddSaving" type="number" placeholder="Add Saving">
+        <input id="GoalAmount" type="number" placeholder="Goal Amount">
     
-        <button onclick="Update()" class="update">Update</button>
+        <button id="updateBtn">Update</button>
         <button onclick="Reset()" class="reset">Reset</button>
-    
+
     </section>
 
     <!-- PROGRESS BAR -->
