@@ -34,17 +34,25 @@
 
             <div class="Info">
 
-                <label for="AddAmount">Add Amount</label>
-                <input id="AddAmount" type="number" placeholder="Add Amount">
-                <label for="GoalAmount">Goal Amount</label>
-                <input id="GoalAmount" type="number" placeholder="Goal Amount">
-                <label for="SavedMoney">Saved Money</label>
-                <input id="SavedMoney" type="number" placeholder="Saved Money">
-                
+                <div style="grid-column: span 2 / span 2; grid-column-start: 2;">
+                    <label for="AddAmount">Add Amount</label>
+                    <input id="AddAmount" type="number" placeholder="Add Amount">
+                </div>
+                <div style="grid-column: span 2 / span 2; grid-column-start: 4;">
+                    <label for="GoalAmount">Goal Amount</label>
+                    <input id="GoalAmount" type="number" placeholder="Goal Amount">
+                </div>
+                <div style="grid-column: span 2 / span 2; grid-column-start: 6;">
+                    <label for="SavedMoney">Saved Money</label>
+                    <input id="SavedMoney" type="number" placeholder="Saved Money">
+                </div>
+
+                <div style=" grid-column: span 6 / span 6; grid-column-start: 2; grid-row-start: 2;">
+                    <button id="updateBtn">Update</button>
+                    <button onclick="Reset()" class="reset">Reset</button>
+                </div>
+
             </div>    
-                
-                <button id="updateBtn">Update</button>
-                <button onclick="Reset()" class="reset">Reset</button>
 
         </section>
 

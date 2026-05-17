@@ -55,20 +55,29 @@ main {
 }
 
 .Info {
-    display: flex;
-    align-items: start;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
     margin-top: 20px;
     width: 100%;
     border-radius: 10px;
-    display: flex;
-    flex-direction: row;
     gap: 20px;
     color: white;
     background-color: var(--color-four);
     padding: 30px 20px;
+    gap: 10%;
 }
 
 .Info label {
     font-size: 1.2em;
 }
+
+.Info input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1em;
+    margin-top: 5px;
+}
+
