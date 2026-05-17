@@ -18,11 +18,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding-right: 30px;
 }
 
 main {
-    width: min(100%, 1240px);
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
 }
 
 .dashboard {
@@ -50,4 +52,23 @@ main {
 #Current, #Goal, #Progress, #Finish {
     margin: 0;
     color: white;
+}
+
+.Info {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    color: white;
+    background-color: var(--color-four);
+    padding: 30px 20px;
+}
+
+.Info label {
+    font-size: 1.2em;
 }
