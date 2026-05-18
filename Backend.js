@@ -31,20 +31,26 @@ updateBtn.addEventListener('click', () => {
 
 var i = 0;
 function move() {
-  if (i == 0) {
-    i = 1;
-    var elem = document.getElementById("myBar");
-    var width = 1;
-    var id = setInterval(frame, 1);
-    
-    function frame() {
-      if (width >= 100) {
-        clearInterval(id);
-        i = 0;
-      } else {
-        width++;
-        elem.style.width = width + "%";
-      }
-    }
-  }
+
+    Goal = parseFloat(goalAmount.value);
+    Saved = parseFloat(savedMoney.value);
+
+    Remaining = Goal - Saved;
+
+    const myBar = document.getElementById("myBar");
+    const progressBar = document.getElementById("progressBar");
+    const message = document.getElementById("message");
+
+    // Simulate progress
+    const interval = setInterval(() => {
+        if (Remaining >= 100) {
+            clearInterval(interval);
+            // Show message after completion
+            message.style.display = "block";
+        } else {
+            Remaining++;
+            myBar.style.width = Remaining + "%";
+            myBar.textContent = Remaining + "%";
+        }
+    }, 50); // speed of progress
 }
