@@ -8,6 +8,27 @@ const goalAmount = document.getElementById('GoalAmount');
 const updateBtn = document.getElementById('updateBtn');
 const activityHistory = document.getElementById('ActivityHistory');
 
+function ShowCurrent() {
+    const DisplayCurrent = savedMoney.value.trim();
+
+    if( DisplayCurrent === "" ) {
+
+        current.textContent = "Please enter a saved amount.";
+        return;
+
+    } else if ( DisplayCurrent < 0 ) {
+
+        current.textContent = "Please enter a valid saved amount.";
+        return;
+        
+    } else {
+
+        current.textContent = `Current Savings: R${DisplayCurrent}`;
+
+    }           
+
+}
+
 function ShowGoal() {
     const DisplayGoal = goalAmount.value.trim();
 
@@ -15,18 +36,29 @@ function ShowGoal() {
 
         goal.textContent = "Please enter a goal amount.";
         return;
+
     } else if ( DisplayGoal <= 0 ) {
 
         goal.textContent = "Please enter a valid goal amount.";
         return;
 
     } else {
+
         goal.textContent = `Your Goal: R${DisplayGoal}`;
+
     }
+}
+
+function ShowProgress() {
+    const DisplayProgress = progress.value.trim();
+
+    addAmount
 }
 
 updateBtn.addEventListener('click', () => {
     ShowGoal();
+    ShowCurrent();
+    ShowProgress();
 });
 
 var i = 0;
@@ -36,21 +68,5 @@ function move() {
     Saved = parseFloat(savedMoney.value);
 
     Remaining = Goal - Saved;
-
-    const myBar = document.getElementById("myBar");
-    const progressBar = document.getElementById("progressBar");
-    const message = document.getElementById("message");
-
-    // Simulate progress
-    const interval = setInterval(() => {
-        if (Remaining >= 100) {
-            clearInterval(interval);
-            // Show message after completion
-            message.style.display = "block";
-        } else {
-            Remaining++;
-            myBar.style.width = Remaining + "%";
-            myBar.textContent = Remaining + "%";
-        }
-    }, 50); // speed of progress
+    
 }
