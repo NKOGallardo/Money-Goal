@@ -1,6 +1,6 @@
-const current = document.getElementById('Current');
-const goal = document.getElementById('Goal');
-const progress = document.getElementById('Progress');
+const currentText = document.getElementById('Current');
+const goalText = document.getElementById('Goal');
+const progressText = document.getElementById('Progress');
 const finish = document.getElementById('Finish');
 const addAmount = document.getElementById('AddAmount');
 const savedMoney = document.getElementById('SavedMoney');
@@ -13,17 +13,17 @@ function ShowCurrent() {
 
     if( DisplayCurrent === "" ) {
 
-        current.textContent = "Please enter a saved amount.";
+        currentText.textContent = "Please enter a saved amount.";
         return;
 
     } else if ( DisplayCurrent < 0 ) {
 
-        current.textContent = "Please enter a valid saved amount.";
+        currentText.textContent = "Please enter a valid saved amount.";
         return;
         
     } else {
 
-        current.textContent = `Current Savings: R${DisplayCurrent}`;
+        currentText.textContent = `Current Savings: R${DisplayCurrent}`;
 
     }           
 
@@ -34,25 +34,43 @@ function ShowGoal() {
 
     if( DisplayGoal === "" ) {
 
-        goal.textContent = "Please enter a goal amount.";
+        goalText.textContent = "Please enter a goal amount.";
         return;
 
     } else if ( DisplayGoal <= 0 ) {
 
-        goal.textContent = "Please enter a valid goal amount.";
+        goalText.textContent = "Please enter a valid goal amount.";
         return;
 
     } else {
 
-        goal.textContent = `Your Goal: R${DisplayGoal}`;
+        goalText.textContent = `Your Goal: R${DisplayGoal}`;
 
     }
 }
 
 function ShowProgress() {
-    const DisplayProgress = progress.value.trim();
+    const DisplayCurrent = parseFloat(savedMoney.value);
+    const DisplayGoal = parseFloat(goalAmount.value);
 
-    addAmount
+    if (isNaN(DisplayCurrent) || isNaN(DisplayGoal)) {
+
+        progressText.textContent = "Please enter both amounts.";
+        return;
+
+    }
+
+    if (DisplayCurrent < 0 || DisplayGoal <= 0) {
+
+        progressText.textContent = "Please enter valid amounts.";
+        return;
+
+    }
+
+    const percentage = (DisplayCurrent / DisplayGoal) * 100;
+
+    progressText.textContent = `Progress: ${Math.round(percentage)}%`;
+
 }
 
 updateBtn.addEventListener('click', () => {
@@ -68,5 +86,5 @@ function move() {
     Saved = parseFloat(savedMoney.value);
 
     Remaining = Goal - Saved;
-    
+
 }
