@@ -58,15 +58,43 @@ function ShowProgress() {
         progressText.textContent = "Please enter both amounts.";
         return;
 
-    }
-
-    if (DisplayCurrent < 0 || DisplayGoal <= 0) {
+    } else if (DisplayCurrent < 0 || DisplayGoal <= 0) {
 
         progressText.textContent = "Please enter valid amounts.";
         return;
 
-    }
+    } else if (DisplayCurrent > DisplayGoal) {
 
+        progressText.textContent = "Congratulations! You've exceeded your goal!";
+        return;
+    
+    } else if (DisplayCurrent === DisplayGoal) {
+
+        progressText.textContent = "Congratulations! You've reached your goal!";
+        return;
+    
+    } else if (DisplayCurrent === 0) {
+
+        progressText.textContent = "Progress: 0%";
+        return;
+      
+    } else if (DisplayGoal === 0) {
+
+        progressText.textContent = "Goal amount cannot be zero.";
+        return;    
+    
+    } else if (isNaN(DisplayCurrent)) {
+
+        progressText.textContent = "Please enter saved amount.";
+        return;
+
+    } else if (isNaN(DisplayGoal)) {
+
+        progressText.textContent = "Please enter goal amount.";
+        return;
+
+    }    
+ 
     const percentage = (DisplayCurrent / DisplayGoal) * 100;
 
     progressText.textContent = `Progress: ${Math.round(percentage)}%`;
@@ -78,6 +106,18 @@ updateBtn.addEventListener('click', () => {
     ShowCurrent();
     ShowProgress();
 });
+
+function Reset() {
+
+    window.alert("Are you sure you want to reset your progress? This action cannot be undone.");
+    window.alert("All data will be lost.");
+
+    savedMoney.value = "";
+    goalAmount.value = "";
+    currentText.textContent = "Current Savings: R0";
+    goalText.textContent = "Your Goal: R0";
+    progressText.textContent = "Progress: 0%";
+}
 
 var i = 0;
 function move() {
