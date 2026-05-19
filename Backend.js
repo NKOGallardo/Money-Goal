@@ -1,5 +1,6 @@
 const currentText = document.getElementById('Current');
 const goalText = document.getElementById('Goal');
+const remainingText = document.getElementById('Remaining');
 const progressText = document.getElementById('Progress');
 const finish = document.getElementById('Finish');
 const addAmount = document.getElementById('AddAmount');
@@ -119,12 +120,18 @@ function Reset() {
     progressText.textContent = "Progress: 0%";
 }
 
-var i = 0;
-function move() {
+function addtosavings() {
+    const amountToAdd = parseFloat(addAmount.value);
+    const currentAmount = parseFloat(savedMoney.value);
 
-    Goal = parseFloat(goalAmount.value);
-    Saved = parseFloat(savedMoney.value);
-
-    Remaining = Goal - Saved;
+    if (isNaN(amountToAdd) || amountToAdd <= 0) {
+        window.alert("Please enter a valid amount to add.");
+        return;
+    } else if (amountToAdd > 0) {
+        const newAmount = currentAmount + amountToAdd;
+        savedMoney.value = newAmount.toFixed(2);
+        ShowCurrent();
+        ShowProgress();
+    }
 
 }
