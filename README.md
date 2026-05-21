@@ -1,5 +1,5 @@
 # 💰 Savings Goal Tracker 
-# still in prodution
+# still in work
 
 A modern financial goal tracking website built with HTML, CSS, and Vanilla JavaScript.
 
